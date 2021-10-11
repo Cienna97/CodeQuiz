@@ -1,11 +1,26 @@
+var btn = window.document.querySelector("button");
+console.dir(btn);
+
+
+var score = 0;
+
+//for(var i=0; i<questionslength; i++){
+
+var answer = confirm(questions[i].q);
+
+
+
+
+
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+var 
 
 
 
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+//var generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
     var output = [];
     var answers;
@@ -45,7 +60,7 @@ function showResults(questions, quizContainer, resultsContainer){
 
  var numCorrect = 0;
 
- for(var i=0; i<questions.length; i++){
+ //for(var i=0; i<questions.length; i++){
 
     userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
