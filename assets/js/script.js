@@ -1,3 +1,10 @@
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+
+
+
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
     var output = [];
@@ -32,7 +39,29 @@ function showQuestions(questions, quizContainer){
 }
 
 function showResults(questions, quizContainer, resultsContainer){
+ var answerContainers = quizContainer.querySelectorAll('.answers');
 
+ var userAnswer = ';'
+
+ var numCorrect = 0;
+
+ for(var i=0; i<questions.length; i++){
+
+    userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+
+    if(userAnswer===questions[i].correctAnswer){
+
+        numCorrect++;
+
+    answerContainers[i].style.color = 'lightgreen';
+    }
+
+    else{
+        answerContainers[i].style.color = 'red';
+    }
+ }
+
+ resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
 }
 
 showQuestions(questions, quizContainer);
