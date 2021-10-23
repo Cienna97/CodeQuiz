@@ -7,7 +7,7 @@ var score = 0;
 
 
 
-var generate = document.getElementById('generate');
+var generateQuiz = document.getElementById('generate');
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 
@@ -17,6 +17,7 @@ var resultsContainer = document.getElementById('results');
 
 
 function generateQuiz(){
+
     //Display Questions, click an answer if correct adds point,start the timer,  subracts time if incorrect, store the data and create a place to save highscore with initals 
 }
 
@@ -46,7 +47,7 @@ function showResults(questions, quizContainer, resultsContainer){
 //  resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
 
 
-function showQuestions(questions, quizContainer){}
+function showQuestions(questions, quizContainer){
 
 
 var questions = [
@@ -124,7 +125,7 @@ var questions = [
         },
         correctAnswer: 'c'
     },
-]
+]}
 
 
 
