@@ -7,9 +7,9 @@ var score = 0;
 
 
 
-var generateQuiz = document.getElementById('generate');
-var questionContainer = document.getElementById('question-container');
-var resultsContainer = document.getElementById('results');
+var generateQuiz = document.getElementById('generate')
+var questionContainer = document.getElementById('question-container')
+var resultsContainer = document.getElementById('results')
 
 generateQuiz.addEventListener('click', beginQuiz);
 
@@ -22,37 +22,48 @@ generateQuiz.addEventListener('click', beginQuiz);
 function beginQuiz(){
     console.log('start')  
     generateQuiz.classList.add('hide')
+    //questionContainer.classlist.remove('hide')
+    nextQuestion() 
+
+    
 
     //Display Questions, click an answer if correct adds point,start the timer,  subracts time if incorrect, store the data and create a place to save highscore with initals 
 }
 
-function showResults(questions, quizContainer, resultsContainer){
- var answerContainers = quizContainer.querySelectorAll('.answers');
+function nextQuestion(){
+   showQuestion(questions)
+
+}
+
+function showQuestion(questions)
+
+
+//function showResults(questions, quizContainer, resultsContainer){
+ //var answerContainers = quizContainer.querySelectorAll('.answers');
 
 
 
- var numCorrect = 0;
+
 
  //for(var i=0; i<questions.length; i++){
 
-    userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+    //userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
-    if(userAnswer===questions[i].correctAnswer){
+    //if(userAnswer===questions[i].correctAnswer){
 
-        numCorrect++;
+        //numCorrect++;
 
-    answerContainers[i].style.color = 'lightgreen';
-    }
+    //answerContainers[i].style.color = 'lightgreen';
+    //}
 
-    else{
-        answerContainers[i].style.color = 'red';
-    }
- }
+   // else{
+      //  answerContainers[i].style.color = 'red';
+    //}
+ //}
 
 //  resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
 
 
-function showQuestions(questions, quizContainer){
 
 
 var questions = [
@@ -130,7 +141,7 @@ var questions = [
         },
         correctAnswer: 'c'
     },
-]}
+]
 
 
 
