@@ -102,11 +102,12 @@ var questions = [
 
 var questions = [
     {
-        questions: "What is my name?",
+        questions: "How do you read and write a file using JavaScript?",
         answers: {
-            a: "banana",
-            b: "kiwi",
-            c: 'berry'
+            a: "Using JavaScript extensions",
+            b: "Copy and paste",
+            c: "Both a and d",
+            d: "Using a web page and Active X objects"
         },
         correctAnswer: 'c'
     },
@@ -114,11 +115,12 @@ var questions = [
 
 var questions = [
     {
-        questions: "What is my name?",
+        questions: "What are all the looping structures in JavaScript?",
         answers: {
-            a: "banana",
-            b: "kiwi",
-            c: 'berry'
+            a: "For",
+            b: "While",
+            c: "a, b, and d",
+            d: "Do-while loops"
         },
         correctAnswer: 'c'
     },
