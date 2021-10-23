@@ -1,62 +1,29 @@
-var btn = window.document.querySelector("button");
-console.dir(btn);
+
 
 
 var score = 0;
 
-//for(var i=0; i<questionslength; i++){
-
-var answer = confirm(questions[i].q);
 
 
 
 
-
+var generate = document.getElementById('generate');
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
-var 
 
 
 
 
-//var generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-
-    var output = [];
-    var answers;
-
-    for(var i=0; i<questions.length; i++){
-
-        answers = [];
-
-        for(letter in questions[i].answers){
-
-            answers.push(
-                '<label>'
-                + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-                + letter + ': '
-                + questions[i].answers[letter]
-            +'</label>'
-            );
-        }
-
-        output.push(
-            '<div class="questions">' + questions[i].question + '</div>'
-            + '<div class="answers">' + answers.join('') + '</div>'
-        );
-    }
-    quizContainer.innerHTML = output.join('');
-}
 
 
-function showQuestions(questions, quizContainer){
-
+function generateQuiz(){
+    //Display Questions, click an answer if correct adds point,start the timer,  subracts time if incorrect, store the data and create a place to save highscore with initals 
 }
 
 function showResults(questions, quizContainer, resultsContainer){
  var answerContainers = quizContainer.querySelectorAll('.answers');
 
- var userAnswer = ';'
+
 
  var numCorrect = 0;
 
@@ -76,23 +43,82 @@ function showResults(questions, quizContainer, resultsContainer){
     }
  }
 
- resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
-}
+//  resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
 
-showQuestions(questions, quizContainer);
 
-submitButton.onclick = function(){
-    showResults(questions, quizContainer, resultsContainer);
-}
+function showQuestions(questions, quizContainer){}
 
+
+var questions = [
+    {
+        questions: "What are the JavaScript Data Types?",
+        answers: {
+            a: "Number and String",
+            b: "Boolean and Object",
+            c: "a, b , and d",
+            d: "Undefined"
+        },
+        correctAnswer: 'c'
+    },
+]
+
+var questions = [
+    {
+        questions: "Which company developed JavaScript",
+        answers: {
+            a: "Target",
+            b: "Amazon",
+            c: "Netscape",
+            d: "Microsoft"
+        },
+        correctAnswer: 'c'
+    },
+]
+
+var questions = [
+    {
+        questions: "What is a prompt box?",
+        answers: {
+            a: "A box that allows you to select yes or no",
+            b: "A fancy box",
+            c: "A box that allows one to input text by providing a box",
+            d: "Nothing" 
+        },
+        correctAnswer: 'c'
+    },
+]
+
+var questions = [
+    {
+        questions: "What is love?",
+        answers: {
+            a: "trusing one another",
+            b: "meaningful relationship",
+            c: "It's not real"
+        },
+        correctAnswer: 'c'
+    },
+]
 
 var questions = [
     {
         questions: "What is my name?",
         answers: {
-            a: 'Peanut',
-            b: 'Vicky',
-            c: 'Cienna'
+            a: "banana",
+            b: "kiwi",
+            c: 'berry'
+        },
+        correctAnswer: 'c'
+    },
+]
+
+var questions = [
+    {
+        questions: "What is my name?",
+        answers: {
+            a: "banana",
+            b: "kiwi",
+            c: 'berry'
         },
         correctAnswer: 'c'
     },
@@ -101,6 +127,9 @@ var questions = [
 
 
 
+generate.addEventListener("click", generateQuiz)
 
 
-var buttonEl = document.querySelector("#save-data")
+
+
+//var buttonEl = document.querySelector("#save-data")
