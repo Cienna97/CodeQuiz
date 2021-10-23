@@ -8,15 +8,20 @@ var score = 0;
 
 
 var generateQuiz = document.getElementById('generate');
-var quizContainer = document.getElementById('quiz');
+var questionContainer = document.getElementById('question-container');
 var resultsContainer = document.getElementById('results');
 
+generateQuiz.addEventListener('click', beginQuiz);
 
 
 
 
 
-function generateQuiz(){
+
+
+function beginQuiz(){
+    console.log('start')  
+    generateQuiz.classList.add('hide')
 
     //Display Questions, click an answer if correct adds point,start the timer,  subracts time if incorrect, store the data and create a place to save highscore with initals 
 }
@@ -130,7 +135,7 @@ var questions = [
 
 
 
-generate.addEventListener("click", generateQuiz)
+//generate.addEventListener("click", generateQuiz);
 
 
 

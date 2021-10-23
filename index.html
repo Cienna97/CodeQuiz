@@ -11,19 +11,34 @@
 
 <body>
     <header>
-        <div id="code-quiz"></div>
+        <div  class="container" id="code-quiz">
+        <div id="question-container" class="hide"></div>
+        <div class="controls">
         <p>Click the Start button below to begin quiz!</p>
+        </header>
+        <div  class="container" id="code-quiz">
+          <div id="question-container" class="hide">
+          <div id="answer-buttons" class="button-grid">
+            <button class="btna">A</button>
+            <button class="btnb">B</button>
+            <button class="btnc">C</button>
+            <button class="btnd">D</button>
+            </div>
+          </div>
+          <div id="results"></div>
+
+          <div class="controls"> 
         <button class="btn" id="generate">Start</button>
-        <div id="results"></div>
-    </header>
+    <button id="next-btn" class="next hide">Next</button>
     <main class="quiz-questions">
       <section class="begin-quiz">
-        <h2 class="quiz-title">JS Quiz</h2>
+        <h2 class="quiz-title">JavaScript Quiz</h2>
         <ul class="quiz-questions">
-          <li class="quiz-list">A question will be added soon</li>
+          
         </ul> 
     </main>
   <script src="./assets/js/script.js"></script>
+  </div>
 </body>
 
 </html>
