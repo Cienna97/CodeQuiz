@@ -7,9 +7,13 @@ var score = 0;
 
 
 
-var generateQuiz = document.getElementById('generate')
-var questionContainer = document.getElementById('question-container')
-var resultsContainer = document.getElementById('results')
+const generateQuiz = document.getElementById('generate')
+const questionContainer = document.getElementById('question-container')
+const resultsContainer = document.getElementById('results')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
+
+const shuffledQuestions, currentQuestionIndex 
 
 generateQuiz.addEventListener('click', startQuiz);
 
@@ -22,8 +26,10 @@ generateQuiz.addEventListener('click', startQuiz);
 function startQuiz() {
     console.log('start')  
     generateQuiz.classList.add('hide')
+    shuffledQuestions = questions.sort(()=> Math.random() - .5)
+    currentQuestionIndex = 0
     questionContainer.classList.remove('hide')
-    nextQuestion() 
+    //nextQuestion() 
 
     
 
@@ -31,12 +37,12 @@ function startQuiz() {
 }
 
 function setNextQuestion(){
-   showQuestion()
+   showQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
 
 function showQuestion(question) {
-
+    questionElement.innerText = question.question
 }
 
 
@@ -68,7 +74,7 @@ function showQuestion(question) {
 
 
 
-var questions = [
+const questions = [
     {
         question: "What are the JavaScript Data Types?",
         answers: {
@@ -109,11 +115,11 @@ var questions = [
 
 var questions = [
     {
-        question: "What is love?",
+        question: "",
         answers: {
-            a: "trusing one another",
-            b: "meaningful relationship",
-            c: "It's not real"
+            a: "",
+            b: "",
+            c: ""
         },
         correctAnswer: 'c'
     },
