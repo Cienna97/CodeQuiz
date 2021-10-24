@@ -13,7 +13,7 @@ const resultsContainer = document.getElementById('results')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-const shuffledQuestions, currentQuestionIndex 
+let shuffledQuestions, currentQuestionIndex 
 
 generateQuiz.addEventListener('click', startQuiz);
 
@@ -87,7 +87,7 @@ const questions = [
     },
 ]
 
-var questions = [
+const questions = [
     {
         question: "Which company developed JavaScript",
         answers: {
@@ -100,7 +100,7 @@ var questions = [
     },
 ]
 
-var questions = [
+const questions = [
     {
         question: "What is a prompt box?",
         answers: {
@@ -113,7 +113,7 @@ var questions = [
     },
 ]
 
-var questions = [
+const questions = [
     {
         question: "",
         answers: {
@@ -125,7 +125,7 @@ var questions = [
     },
 ]
 
-var questions = [
+const questions = [
     {
         question: "How do you read and write a file using JavaScript?",
         answers: {
@@ -138,7 +138,7 @@ var questions = [
     },
 ]
 
-var questions = [
+const questions = [
     {
         question: "What are all the looping structures in JavaScript?",
         answers: {
