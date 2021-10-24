@@ -11,7 +11,7 @@ var generateQuiz = document.getElementById('generate')
 var questionContainer = document.getElementById('question-container')
 var resultsContainer = document.getElementById('results')
 
-generateQuiz.addEventListener('click', beginQuiz);
+generateQuiz.addEventListener('click', startQuiz);
 
 
 
@@ -19,10 +19,10 @@ generateQuiz.addEventListener('click', beginQuiz);
 
 
 
-function beginQuiz(){
+function startQuiz() {
     console.log('start')  
     generateQuiz.classList.add('hide')
-    //questionContainer.classlist.remove('hide')
+    questionContainer.classList.remove('hide')
     nextQuestion() 
 
     
@@ -30,12 +30,14 @@ function beginQuiz(){
     //Display Questions, click an answer if correct adds point,start the timer,  subracts time if incorrect, store the data and create a place to save highscore with initals 
 }
 
-function nextQuestion(){
-   showQuestion(questions)
+function setNextQuestion(){
+   showQuestion()
 
 }
 
-function showQuestion(questions)
+function showQuestion(question) {
+
+}
 
 
 //function showResults(questions, quizContainer, resultsContainer){
@@ -68,7 +70,7 @@ function showQuestion(questions)
 
 var questions = [
     {
-        questions: "What are the JavaScript Data Types?",
+        question: "What are the JavaScript Data Types?",
         answers: {
             a: "Number and String",
             b: "Boolean and Object",
@@ -81,7 +83,7 @@ var questions = [
 
 var questions = [
     {
-        questions: "Which company developed JavaScript",
+        question: "Which company developed JavaScript",
         answers: {
             a: "Target",
             b: "Amazon",
@@ -94,7 +96,7 @@ var questions = [
 
 var questions = [
     {
-        questions: "What is a prompt box?",
+        question: "What is a prompt box?",
         answers: {
             a: "A box that allows you to select yes or no",
             b: "A fancy box",
@@ -107,7 +109,7 @@ var questions = [
 
 var questions = [
     {
-        questions: "What is love?",
+        question: "What is love?",
         answers: {
             a: "trusing one another",
             b: "meaningful relationship",
@@ -119,7 +121,7 @@ var questions = [
 
 var questions = [
     {
-        questions: "How do you read and write a file using JavaScript?",
+        question: "How do you read and write a file using JavaScript?",
         answers: {
             a: "Using JavaScript extensions",
             b: "Copy and paste",
@@ -132,7 +134,7 @@ var questions = [
 
 var questions = [
     {
-        questions: "What are all the looping structures in JavaScript?",
+        question: "What are all the looping structures in JavaScript?",
         answers: {
             a: "For",
             b: "While",
