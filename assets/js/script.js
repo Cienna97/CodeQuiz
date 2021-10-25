@@ -1,12 +1,8 @@
-var score = 0;
-
-
-
-
+const score = 0;
 
 const generateQuiz = document.getElementById('generate')
 const questionContainer = document.getElementById('question-container')
-const resultsContainer = document.getElementById('results')
+const resultsContainerElement = document.getElementById('results')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
@@ -26,7 +22,7 @@ function startQuiz() {
     shuffledQuestions = questions.sort(()=> Math.random() - .5)
     currentQuestionIndex = 0
     questionContainer.classList.remove('hide')
-    //nextQuestion() 
+    setNextQuestion() 
 
     
 
