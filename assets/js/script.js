@@ -85,9 +85,8 @@ const questions = [
         },
         correctAnswer: 'c'
     },
-]
 
-const questions = [
+
     {
         question: "Which company developed JavaScript",
         answers: {
@@ -98,9 +97,7 @@ const questions = [
         },
         correctAnswer: 'c'
     },
-]
 
-const questions = [
     {
         question: "What is a prompt box?",
         answers: {
@@ -111,9 +108,7 @@ const questions = [
         },
         correctAnswer: 'c'
     },
-]
 
-const questions = [
     {
         question: "",
         answers: {
@@ -123,9 +118,7 @@ const questions = [
         },
         correctAnswer: 'c'
     },
-]
 
-const questions = [
     {
         question: "How do you read and write a file using JavaScript?",
         answers: {
@@ -136,9 +129,7 @@ const questions = [
         },
         correctAnswer: 'c'
     },
-]
 
-const questions = [
     {
         question: "What are all the looping structures in JavaScript?",
         answers: {
