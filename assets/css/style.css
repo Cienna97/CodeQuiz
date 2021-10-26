@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
   }
   
@@ -7,6 +7,8 @@
     --secondary: 	#610A5B;
     --black:black;
     font-size: 62.5%;
+    --hue-incorrect: #ff0000;
+    --hue-correct: #009933;
   }
   
   body {
@@ -19,6 +21,8 @@
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+
+  
   
   header {
     background: var(--secondary);
@@ -34,7 +38,8 @@
   
   .quiz-title {
     font-size: 40px;
-
+   display: flex;
+justify-content: center;
   }
 
   p,
@@ -129,7 +134,7 @@
     flex: 1;
   }
   
-  .btn, .start-btn, .next-btn {
+  .btn {
     outline: none;
     border: none;
     display: inline-block;
@@ -140,6 +145,22 @@
     top: -3px;
     box-shadow: 0px 3px var(--grey);
     position: center;
+  
+  }
+
+  .start-btn, .next-btn {
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 20px 25px;
+    background: var(--primary);
+    font-size: 2.2rem;
+    border-radius: 12px;
+    top: -3px;
+    box-shadow: 0px 3px var(--grey);
+    position: center;
+    margin: 50px 400px;
+    
   }
 
   .btn:hover {
@@ -149,6 +170,20 @@
   .btn:active {
     box-shadow: 0 0px var(--grey);
     top: 0;
+  }
+
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    margin: 20px 0px;
+  }
+.btn.correct {
+  --hue: var(--hue-correct);
+}
+
+  body.incorrect {
+    --hue:var(--hue-incorrect);
   }
   
   .edit-btn,
@@ -243,8 +278,9 @@
     font-size: 2.4rem;
     padding: 20px;
     border-top: 5px solid var(--primary);
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
   }
 
   #question {
