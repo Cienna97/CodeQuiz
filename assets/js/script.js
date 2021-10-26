@@ -38,7 +38,7 @@ function setNextQuestion(){
 
 function showQuestion(question) {
     questionElement.innerText = question.question
-    questions.answer.forEach(answer => {
+    questions.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
         button.classList.add('btn')
@@ -91,71 +91,69 @@ function resetButton() {
 const questions = [
     {
         question: "What are the JavaScript Data Types?",
-        answers: {
-            a: "Number and String",
-            b: "Boolean and Object",
-            c: "a, b , and d",
-            d: "Undefined"
-        },
-        correctAnswer: 'c'
+        answers: [
+            {text: 'Number and String', correct: false },
+            {text: 'Boolean and Object', correct: false},
+            {text: 'a, b, and d', correct: true},
+            {text: 'Undefined', correct: false}
+
+        ] 
     },
 
 
     {
         question: "Which company developed JavaScript?",
-        answers: {
-            a: "Target",
-            b: "Amazon",
-            c: "Netscape",
-            d: "Microsoft"
-        },
-        correctAnswer: 'c'
+        answers: [
+            {text: 'Target', correct: false},
+            {text: 'Amazon', correct: false},
+            {text: 'Netscape', correct: true},
+            {text: 'Microsoft', correct: false}
+        ]
     },
 
-    {
-        question: "What is a prompt box?",
-        answers: {
-            a: "A box that allows you to select yes or no",
-            b: "A fancy box",
-            c: "A box that allows one to input text by providing a box",
-            d: "Nothing" 
-        },
-        correctAnswer: 'c'
-    },
 
-    {
-        question: "What are all the types of pop up boxes in JavaScript?",
-        answers: {
-            a: "Alert",
-            b: "Confirm",
-            c: "Prompt",
-            d: "All of the above"
-        },
-        correctAnswer: 'c'
-    },
+{
+    question: "What is a prompt box?",
+    answers: [
+        {text: 'A box that allows you to select yes or no', correct: false},
+        {text: 'A fancy box', correct: false},
+        {text: 'A box that allows one to input text by providing a box', correct: true},
+        {text: 'Nothing', correct: false}
+    ]
+},
 
-    {
-        question: "How do you read and write a file using JavaScript?",
-        answers: {
-            a: "Using JavaScript extensions",
-            b: "Copy and paste",
-            c: "Both a and d",
-            d: "Using a web page and Active X objects"
-        },
-        correctAnswer: 'c'
-    },
+{
+    question: "What are all the types of pop up boxes in JavaScript?",
+    answers: [
+        {text: 'Alert', correct: false},
+        {text: 'Confirm', correct: false},
+        {text: 'Prompt', correct: false},
+        {text: 'All of the above', correct: true}
+    ]
+},
 
-    {
-        question: "What are all the looping structures in JavaScript?",
-        answers: {
-            a: "For",
-            b: "While",
-            c: "a, b, and d",
-            d: "Do-while loops"
-        },
-        correctAnswer: 'c'
-    },
-]
+{
+    question: "How do you read and write a file using JavaScript?",
+    answers: [
+        {text: 'Using JavaScript extentions', correct: false},
+        {text: 'Copy and paste', correct: false},
+        {text: 'Both a and d', correct: true},
+        {text: 'Using a web page and Active X objects', correct: false}
+    ]
+},
+
+
+{
+    question: "What are the looping structures in JavaScript?",
+    answers: [
+        {text: 'For', correct: false},
+        {text: 'While', correct: false},
+        {text: 'a, b, and d', correct: true},
+        {text: 'Do-while loops', correct: false}
+    ]
+}
+
+
 
 
 
@@ -166,3 +164,5 @@ const questions = [
 
 
 //var buttonEl = document.querySelector("#save-data")
+
+  
