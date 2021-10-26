@@ -2,27 +2,25 @@ const score = 0;
 
 const generateQuiz = document.getElementById('generate')
 const nextButton = document.getElementById('next-btn')
-const questionContainer = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('question-container')
 const resultsContainerElement = document.getElementById('results')
 const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const answerButtons = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex 
 
 generateQuiz.addEventListener('click', startQuiz);
-
-
-
-
-
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 
 function startQuiz() {
-    console.log('start')  
     generateQuiz.classList.add('hide')
     shuffledQuestions = questions.sort(()=> Math.random() - .5)
     currentQuestionIndex = 0
-    questionContainer.classList.remove('hide')
+    questionContainerElement.classList.remove('hide')
     setNextQuestion() 
 
     
@@ -31,14 +29,14 @@ function startQuiz() {
 }
 
 function setNextQuestion(){
-    resetButton()
+    resetState()
    showQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
 
 function showQuestion(question) {
     questionElement.innerText = question.question
-    questions.answers.forEach(answer => {
+    question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
         button.classList.add('btn')
@@ -46,14 +44,9 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        answerButtons.appendChild(button)
     })
 }
-
-function selectAnswer(e) {
-
-}
-
 
 //function showResults(questions, quizContainer, resultsContainer){
  //var answerContainers = quizContainer.querySelectorAll('.answers');
@@ -79,12 +72,44 @@ function selectAnswer(e) {
  //}
 
 //  resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
-function resetButton() {
+function resetState() {
     nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    while (answerButtons.firstChild) {
+    answerButtons.removeChild
+    (answerButtons.firstChild)
     }
 }
+
+
+function selectAnswer(e) {
+    const selectButton = e.target
+    const correct = selectButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtons.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if(shuffledQuestions.length > currentQuestionIndex + 1) {
+     nextButton.classList.remove('hide')  
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
+}
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if(correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
+
 
 
 
@@ -96,7 +121,6 @@ const questions = [
             {text: 'Boolean and Object', correct: false},
             {text: 'a, b, and d', correct: true},
             {text: 'Undefined', correct: false}
-
         ] 
     },
 
@@ -151,7 +175,9 @@ const questions = [
         {text: 'a, b, and d', correct: true},
         {text: 'Do-while loops', correct: false}
     ]
-}
+},
+
+]
 
 
 
@@ -165,4 +191,3 @@ const questions = [
 
 //var buttonEl = document.querySelector("#save-data")
 
-  

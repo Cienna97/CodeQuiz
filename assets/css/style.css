@@ -129,7 +129,7 @@
     flex: 1;
   }
   
-  .btn, .start-btn{
+  .btn, .start-btn, .next-btn {
     outline: none;
     border: none;
     display: inline-block;
@@ -142,8 +142,6 @@
     position: center;
   }
 
-  
-  
   .btn:hover {
     box-shadow: 0 2px var(--grey);
     top: -2px;
