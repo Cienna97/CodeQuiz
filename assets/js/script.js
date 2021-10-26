@@ -8,7 +8,7 @@ const score = 0;
 
 const generateQuiz = document.getElementById('generate')
 const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('quiz-container')
 const resultsContainerElement = document.getElementById('results')
 const questionElement = document.getElementById('question')
 const answerButtons = document.getElementById('answer-buttons')
