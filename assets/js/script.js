@@ -1,6 +1,7 @@
 const score = 0;
 
 const generateQuiz = document.getElementById('generate')
+const nextButton = document.getElementById('next-btn')
 const questionContainer = document.getElementById('question-container')
 const resultsContainerElement = document.getElementById('results')
 const questionElement = document.getElementById('question')
@@ -30,20 +31,27 @@ function startQuiz() {
 }
 
 function setNextQuestion(){
+    resetButton()
    showQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
 
 function showQuestion(question) {
     questionElement.innerText = question.question
-    question.answers.forEach(answer => {
+    questions.answer.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
         button.classList.add('btn')
         if(answer.correct) {
-            button.dataser.correct = answer.correct
+            button.dataset.correct = answer.correct
         }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
     })
+}
+
+function selectAnswer(e) {
+
 }
 
 
@@ -71,7 +79,12 @@ function showQuestion(question) {
  //}
 
 //  resultsContainer.innerHTML = numCorrect + 'out of' + questions.length;
-
+function resetButton() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
 
 
 
@@ -89,7 +102,7 @@ const questions = [
 
 
     {
-        question: "Which company developed JavaScript",
+        question: "Which company developed JavaScript?",
         answers: {
             a: "Target",
             b: "Amazon",
@@ -111,11 +124,12 @@ const questions = [
     },
 
     {
-        question: "",
+        question: "What are all the types of pop up boxes in JavaScript?",
         answers: {
-            a: "",
-            b: "",
-            c: ""
+            a: "Alert",
+            b: "Confirm",
+            c: "Prompt",
+            d: "All of the above"
         },
         correctAnswer: 'c'
     },
