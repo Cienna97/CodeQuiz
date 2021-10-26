@@ -141,7 +141,7 @@ justify-content: center;
     display: inline-block;
     padding: 20px 15px;
     background: var(--primary);
-    font-size: 2.2rem;
+    font-size: 30px;
     border-radius: 12px;
     top: -3px;
     box-shadow: 0px 3px var(--grey);
@@ -149,13 +149,13 @@ justify-content: center;
   
   }
 
-  .start-btn, .next-btn {
+  .start-btn {
     outline: none;
     border: none;
     display: inline-block;
-    padding: 40px 75px;
+    padding: 30px 50px;
     background: var(--primary);
-    font-size: 2.2rem;
+    font-size: 30px;
     border-radius: 12px;
     top: -3px;
     box-shadow: 0px 3px var(--grey);
@@ -163,6 +163,22 @@ justify-content: center;
     margin:200px 400px;
     
   }
+
+  .next {
+      outline: none;
+      border: none;
+      display: inline-block;
+      padding: 30px 50px;
+      background: var(--primary);
+      font-size: 30px;
+      border-radius: 12px;
+      top: -3px;
+      box-shadow: 0px 3px var(--grey);
+      position: center;
+      margin:0px 400px;
+      
+    }
+  
 
   .btn:hover {
     box-shadow: 0 2px var(--grey);
