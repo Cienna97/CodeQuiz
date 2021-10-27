@@ -1,10 +1,14 @@
-
-
-
-
-
-
 const score = 0;
+(function(){
+    var sec = 30;
+    function startTimer(){
+        console.log('timer')
+    }
+})
+
+
+
+
 const generateQuiz = document.getElementById('generate')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('quiz-container')
@@ -177,7 +181,7 @@ const questions = [
     answers: [
         {text: 'For', correct: false},
         {text: 'While', correct: false},
-        {text: 'a, b, and d', correct: true},
+        {text: 'a, b and d', correct: true},
         {text: 'Do-while loops', correct: false}
     ]
 },

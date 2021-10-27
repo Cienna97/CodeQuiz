@@ -7,8 +7,8 @@
     --secondary: 	#610A5B;
     --black:black;
     font-size: 62.5%;
-    --red-incorrect: #ff0000;
-    --hue-correct: #009933;
+    --red: #ff0000;
+    --green: #009933;
   }
   
   body {
@@ -63,19 +63,7 @@ justify-content: center;
     border: 2px solid var(--grey);
     border-radius: 12px;
   }
-  
-  form .form-group {
-    margin: 10px 6px 10px 0;
-    flex: 1;
-  }
 
-  .page-title {
-    color: var(--primary);
-    margin-bottom: 5px;
-    margin-top: 0;
-    font-size: 4.5rem;
-  }
-  
   .page-content {
     flex: 1;
     display: flex;
@@ -84,55 +72,10 @@ justify-content: center;
     margin: 25px auto;
     width: 95%;
   }
-  
-  .task-list-wrapper {
-    flex: 1;
-    margin: 0 20px 20px;
-  }
-  
+
   .begin-quiz {
     color: var(--secondary);
     font-size: 2.6rem;
-  }
-  
-  .task-list {
-    list-style: none;
-    padding: 15px;
-    height: calc(100% - 50px);
-    background: rgb(196, 196, 196);
-    border-radius: 12px;
-    border: 2px solid var(--grey);
-  }
-  
-  .task-item {
-    color: var(--grey);
-    padding: 15px 15px;
-    border: 2px solid var(--grey);
-    background: var(--tertiary);
-    border-radius: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .task-name {
-    margin: 0;
-    font-size: 1.8rem;
-  }
-  
-  .task-type {
-    color: var(--secondary);
-    font-size: 1.55rem;
-  }
-  .task-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 10px 0 5px 0;
-    justify-content: space-between;
-  }
-  
-  .task-actions button,
-  .task-actions select {
-    flex: 1;
   }
   
   .btn {
@@ -179,13 +122,12 @@ justify-content: center;
       
     }
   
-
   .btn:hover {
-    box-shadow: 0 2px var(--grey);
+    box-shadow: 0 2px;
     top: -2px;
   }
   .btn:active {
-    box-shadow: 0 0px var(--grey);
+    box-shadow: 0 0px;
     top: 0;
   }
 
@@ -196,49 +138,16 @@ justify-content: center;
     margin: 20px 0px;
   }
 .btn.correct {
-  --hue: var(--hue-correct);
+background: var(--green);
 }
 
-.btn.wrong {
-  
+.btn.incorrect {
+  background: var(--red);
 }
-  .select-status {
-    font-size: 1.4rem;
-    padding: 4px 28px 4px 4px;
-    width: auto;
-  }
-  
-  .select-dropdown::-ms-expand,
-  .select-status::-ms-expand {
-    display: none;
-  }
-  
-  .select-dropdown:hover,
-  .select-status:hover {
-    border-color: #888;
-  }
-  
-  .select-dropdown:focus,
-  .select-status:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222;
-    outline: none;
-  }
-
   
   @media screen and (max-width: 980px) {
     form .form-group {
       flex: 1 100%;
-    }
-  
-    form .form-group button {
-      width: 100%;
-    }
-  
-    .task-list-wrapper {
-      flex-basis: 100%;
     }
   
   }
