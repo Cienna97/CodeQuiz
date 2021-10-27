@@ -1,10 +1,28 @@
 const score = 0;
-(function(){
-    var sec = 30;
-    function startTimer(){
-        console.log('timer')
+function startTimer(){
+    var counter = 30;
+    setInterval(function(){
+        counter--;
+        if (counter >= 0) {
+            span = document.getElementById("count");
+            span.innerHTML = counter;
+        }
+        if (counter === 0) {
+            alert('Time is up!');
+            clearInterval(counter);
+        }
+        }, 1000);
     }
-})
+    document.getElementById('incorrect').addEventListener('click', function(){
+        sec -= 2;
+        document.getElementById('count').innerHTML='00:' +sec;
+    })
+    function start()
+    {
+        document.getElementById("count").style="color:green;";
+        startTimer();
+    };
+
 
 
 
