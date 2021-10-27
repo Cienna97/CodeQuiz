@@ -5,7 +5,6 @@
 
 
 const score = 0;
-
 const generateQuiz = document.getElementById('generate')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('quiz-container')

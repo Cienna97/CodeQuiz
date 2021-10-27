@@ -7,7 +7,7 @@
     --secondary: 	#610A5B;
     --black:black;
     font-size: 62.5%;
-    --hue-incorrect: #ff0000;
+    --red-incorrect: #ff0000;
     --hue-correct: #009933;
   }
   
@@ -199,31 +199,9 @@ justify-content: center;
   --hue: var(--hue-correct);
 }
 
-  body.incorrect {
-    --hue:var(--hue-incorrect);
-  }
-
-  .select-dropdown,
-  .select-status {
-    display: block;
-    font-size: 2.2rem;
-    color: #444;
-    padding: 12px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    border: 2px solid var(--grey);
-    border-radius: 12px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-image: url("../images/select-arrow.svg");
-    background-repeat: no-repeat, repeat;
-    background-position: right 0.7em top 50%, 0 0;
-    background-size: 0.65em auto, 100%;
-  }
+.btn.wrong {
   
+}
   .select-status {
     font-size: 1.4rem;
     padding: 4px 28px 4px 4px;
@@ -248,11 +226,7 @@ justify-content: center;
     color: #222;
     outline: none;
   }
-  .select-dropdown option,
-  .select-status option {
-    font-weight: normal;
-    font-size: 2rem;
-  }
+
   
   @media screen and (max-width: 980px) {
     form .form-group {
